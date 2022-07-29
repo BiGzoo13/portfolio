@@ -3,5 +3,8 @@ from django.urls import include, path
 from project import views
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.dashboard),
+    path("<int:pk>/",views.project_detail),
+    path('project/', views.project_index),
+
 ]

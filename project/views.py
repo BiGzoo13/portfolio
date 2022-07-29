@@ -1,6 +1,22 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from project.models import Projects
 
 # Create your views here.
-def index(request):
+def dashboard(request):
     return render(request, 'project/accueil.html')
+
+def project_index(request):
+    projects = Projects.objects.all()
+    context = {
+        'projects': projects
+    }
+    return render(request, 'project/project_index.html', context)
+
+def project_detail(request, pk):
+    projects = Projects.objects.all()
+    context = {
+        'projects': projects
+    }
+    return render(request, 'project/project_detail.html', context)
+
+

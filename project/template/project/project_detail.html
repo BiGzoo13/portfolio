@@ -1,0 +1,20 @@
+{% extends 'project/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <h1>{{ projects.titre }}</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{% static projects.image %}" alt="{{ projects.description }}" width="100%">
+        </div>
+        <div class="col-md-4">
+            <h5>About the project</h5>
+            <p>{{ projects.description }}</p>
+            <h5>Built with:</h5>
+            <p>{{ projects.technologie }}</p>
+        </div>
+    </div>
+
+{% endblock %}
